@@ -23,9 +23,10 @@ class VehicleDetails extends Component {
     render() {
         if(this.state.details) {
             return(
-                <div className="list-group list-group-flush">
-                    {this.state.details.description}
-                    {this.state.details.price}
+                <div className="vehicle-details">
+                    <div><span className="title">{this.props.name}</span></div>
+                    <div>From {this.state.details.price}</div>
+                    <div className="description">{this.state.details.description}</div>
                 </div>);
         }
         return (<div>Loading...</div>);

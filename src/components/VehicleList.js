@@ -27,9 +27,8 @@ class VehicleList extends Component {
 			<ul className="list-group list-group-flush">
 				{this.state.data.vehicles.map(el => (
 					<li className="list-group-item" id={el.id} key={el.id}>
-						<img src={el.media[0].url} />
-						<VehicleDetails id={el.id}></VehicleDetails>
-						<span aria-hidden="true">&times;</span>
+						<img src={el.media[0].url} alt={el.media[0].name} />
+						<VehicleDetails id={el.id} name={el.media[0].name}></VehicleDetails>
 					</li>
 				))}
 			</ul>);

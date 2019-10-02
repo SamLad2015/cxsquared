@@ -1,5 +1,76 @@
-$bg-colour: #ccc;
+$bg-colour: #ffffff;
+$details-width: 25%;
 
 body {
 	background-color: $bg-colour;
+}
+
+ul.list-group {
+	list-style: none;
+	padding:0;
+	margin: 0;
+	li {
+		width: $details-width;
+		display: inline-block;
+		vertical-align: top;
+		margin-bottom: 30px;
+		img {
+			width:100%;
+			height: auto;
+		}
+		div.vehicle-details {
+			display: inline-block;
+			width: 100%;
+			div {
+				display: block;
+				text-align: center;
+				margin: 14px 0;
+			}
+			.title {
+				font-size: 1.5em;
+				font-weight: bold;
+				border-top: solid black 2px;
+				border-bottom: solid black 2px;
+				text-transform: uppercase;
+			}
+			.description {
+				min-height: 40px;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	ul.list-group {
+		li {
+			width: 50% !important;
+		}
+	}
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+	ul.list-group {
+		li {
+			width: 100% !important;
+			border-bottom: 1px solid #666;
+			img {
+				width:50%;
+				height: auto;
+				vertical-align: top;
+			}
+			div.vehicle-details {
+				width: 50%;
+				div {
+					margin: 7px 0;
+				}
+			}
+			.title {
+				border: none !important;
+				font-size: 1.2em !important;
+			}
+			.description {
+				min-height: 1px !important;
+			}
+		}
+	}
 }
