@@ -33,3 +33,6 @@ You have the following test libraries available through ```` gulp test ````
 * Chai [https://github.com/chaijs/chai](https://github.com/chaijs/chai)
 * Sinon [https://github.com/sinonjs/sinon](https://github.com/sinonjs/sinon)
 * Enzyme [https://github.com/airbnb/enzyme](https://github.com/airbnb/enzyme)
+
+### Post gulp Installation:
+Copy images folder to dist folder in order to images work
