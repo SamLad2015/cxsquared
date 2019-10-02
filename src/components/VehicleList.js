@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getData } from '../api';
+import VehicleDetails from "./VehicleDetails";
 
 export default
 class VehicleList extends Component {
@@ -13,7 +14,7 @@ class VehicleList extends Component {
 	}
 
 	componentDidMount() {
-		getData((data) => {
+		getData().then(data => {
 			this.setState({
 				data
 			})
@@ -22,12 +23,17 @@ class VehicleList extends Component {
 
 	render() {
 		if(this.state.data) {
-			console.log(this.state.data);
-		    return (
-			    <h1>Hello World</h1>
-		    )
+			return(
+			<ul className="list-group list-group-flush">
+				{this.state.data.vehicles.map(el => (
+					<li className="list-group-item" id={el.id} key={el.id}>
+						<img src={el.media[0].url} />
+						<VehicleDetails id={el.id}></VehicleDetails>
+						<span aria-hidden="true">&times;</span>
+					</li>
+				))}
+			</ul>);
 	    }
-
 		return (<h1>Loading...</h1>);
 	}
 }
