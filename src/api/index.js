@@ -2,7 +2,7 @@
 * This is an example request. Create your own using best practises for
 * handling asynchronous data fetching
 **/
-
+const fetch = require('isomorphic-fetch')
 const apiUrl = "http://localhost:9988/api/";
 
 export const getData = () => {
